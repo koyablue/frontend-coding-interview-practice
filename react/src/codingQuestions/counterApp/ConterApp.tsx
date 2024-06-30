@@ -7,12 +7,20 @@
 // 3. click the '-' button to decrement.
 // data-testid is used to test your code, please do not remove them.
 
+import { useCounter } from "./useCounter";
+
 export const CounterApp = () => {
+  const { count, increment, decrement } = useCounter();
+
   return (
     <div>
-      <button data-testid="decrement-button">-</button>
-      <button data-testid="increment-button">+</button>
-      <p>clicked: 0</p>
+      <button data-testid="decrement-button" onClick={decrement}>
+        -
+      </button>
+      <button data-testid="increment-button" onClick={increment}>
+        +
+      </button>
+      <p>clicked: {count}</p>
     </div>
   );
 };
